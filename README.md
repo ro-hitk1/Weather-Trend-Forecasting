@@ -1,158 +1,223 @@
 # Weather Trend Forecasting
 
+A data science and machine learning project focused on exploring global weather patterns, identifying trends and anomalies, and forecasting weather conditions using historical weather data.
+
 ## Project Overview
 
-This project focuses on analyzing global weather data, identifying temperature patterns, and building machine learning models to estimate temperature based on geographical and time-related features.
+Weather patterns are influenced by multiple atmospheric and environmental factors. This project uses historical weather data to perform exploratory data analysis, detect unusual weather patterns, study climate trends, and build machine learning models for weather forecasting.
 
-The project includes data cleaning, exploratory data analysis, anomaly detection, geographical analysis, feature importance, model comparison, and model improvement.
+The project combines data preprocessing, statistical analysis, visualization, and predictive modelling in Python.
+
+## Objectives
+
+- Explore and understand global weather data.
+- Identify weather trends and seasonal patterns.
+- Detect anomalies in weather observations.
+- Compare different forecasting and machine learning models.
+- Analyse weather variations across countries and continents.
+- Investigate relationships between weather variables and environmental factors.
+- Evaluate model performance using appropriate regression metrics.
 
 ## Dataset
 
-- **Dataset:** Global Weather Repository
-- **Records:** 170,927
-- **Country-name entries:** 211
-- **Date range:** May 2024 – October 2026
-- **Target variable:** Temperature (°C)
+**Dataset:** `GlobalWeatherRepository(1).csv`
 
-The dataset contains geographical information, timestamps, and temperature readings.
+The dataset contains global weather observations with 128,638 records and 41 columns.
+
+It includes weather-related information such as:
+- Temperature
+- Humidity
+- Wind speed and direction
+- Atmospheric pressure
+- Precipitation
+- Cloud cover
+- Visibility
+- Geographic information
+- Date and time information
+
+The dataset covers the period from **16 May 2024 to 10 March 2026**.
 
 ## Technologies Used
 
-- Python
-- Pandas and NumPy
-- Matplotlib and Seaborn
-- Scikit-learn
-- XGBoost
-- Joblib
-- Jupyter Notebook
+| Technology | Purpose |
+|---|---|
+| Python | Programming language |
+| Pandas | Data manipulation |
+| NumPy | Numerical computations |
+| Matplotlib | Data visualization |
+| Seaborn | Statistical visualization |
+| Scikit-learn | Machine learning and evaluation |
+| XGBoost | Gradient boosting |
+| Statsmodels | Time-series analysis |
+| Jupyter Notebook | Project development |
 
 ## Project Workflow
 
-### 1. Data Cleaning and Preprocessing
-- Checked and handled missing values and duplicate records.
-- Converted date columns into datetime format.
-- Identified and corrected suspicious temperature readings.
-- Verified Celsius and Fahrenheit consistency.
-- Compared StandardScaler and MinMaxScaler on selected numerical features.
+### 1. Data Collection and Preprocessing
+- Load the weather dataset.
+- Inspect the dataset structure and data types.
+- Handle missing values and duplicate records where applicable.
+- Convert date columns into appropriate datetime formats.
+- Prepare relevant features for analysis and modelling.
 
-### 2. Exploratory Data Analysis
-- Analyzed temperature distributions.
-- Studied daily temperature trends.
-- Visualized weather condition frequencies.
-- Examined correlations between numerical features.
+### 2. Exploratory Data Analysis (EDA)
+- Analyse temperature and other weather variables.
+- Explore distributions and correlations.
+- Compare weather patterns across locations.
+- Visualize temporal and geographical variations.
 
-### 3. Anomaly Detection
-- Used Isolation Forest to identify unusual temperature observations.
-- Visualized normal and anomalous records.
-- Examined extreme temperature readings.
+### 3. Weather Trend Analysis
+- Examine changes in weather variables over time.
+- Investigate seasonal and temporal patterns.
+- Compare weather conditions across countries and continents.
 
-### 4. Machine Learning Models
-Built and compared the following models:
+### 4. Anomaly Detection
+- Identify unusual weather observations.
+- Examine extreme values and deviations from typical patterns.
+
+### 5. Weather Forecasting
+The project explores multiple forecasting approaches:
+
 - Linear Regression
-- Decision Tree Regressor
-- Random Forest Regressor
-- XGBoost Regressor
+- Random Forest
+- XGBoost
+- ARIMA
+- Exponential Smoothing
+- Ridge Regression–XGBoost Ensemble
 
-Also evaluated a weighted ensemble of XGBoost and Random Forest.
+Models are evaluated using a common test period to make their performance more comparable.
 
-### 5. Unique Analyses
-- Monthly and yearly temperature analysis.
-- Feature importance using XGBoost.
-- Permutation importance analysis.
-- Geographical temperature visualization.
-- Comparison of temperature patterns across countries.
+### 6. Model Evaluation
 
-### 6. Model Improvement
-Improved the XGBoost model using cyclical time features, hyperparameter tuning, and regularization.
+The following metrics are used:
 
-### 7. Model Validation
-Used TimeSeriesSplit cross-validation to evaluate model performance across different time periods.
+- **MAE (Mean Absolute Error):** Measures average absolute prediction error.
+- **RMSE (Root Mean Squared Error):** Penalizes larger prediction errors.
+- **R² Score:** Measures the proportion of variance explained by the model.
 
-## Model Performance
+### 7. Feature and Spatial Analysis
+- Examine the importance of weather-related features.
+- Investigate geographical differences in weather patterns.
+- Compare weather conditions across regions.
 
-The improved XGBoost model achieved the following results on the chronological test set:
+## Model Results
+
+The Ridge Regression–XGBoost ensemble achieved the following reported results on the common test period:
 
 | Metric | Result |
 |---|---:|
-| MAE | 2.4062°C |
-| RMSE | 3.2484°C |
-| R² Score | 0.8038 |
+| MAE | 2.476 |
+| RMSE | 3.225 |
+| R² Score | 0.152 |
 
-The improved model performed better than the original XGBoost model, which achieved an R² score of 0.7505.
+These results indicate that the ensemble performed better than the previously evaluated Random Forest model. However, the R² score indicates that the model explains only a limited proportion of the variation in the target variable. Therefore, its forecasting performance should be interpreted cautiously.
 
-## Saved Models
-
-The trained models and their feature lists are saved in the `models/` directory:
-
-- `xgboost_weather_model.pkl`
-- `weather_features.pkl`
-- `improved_xgboost_weather_model.pkl`
-- `improved_weather_features.pkl`
+*Note: The reported error units depend on the target variable and its measurement scale.*
 
 ## Project Structure
 
 ```text
 Weather-Trend-Forecasting/
 │
-├── data/
-│   └── GlobalWeatherRepository.csv
+├── implementation.ipynb
+│   └── Main project notebook
 │
-├── notebooks/
-│   └── notebook.ipynb
+├── GlobalWeatherRepository(1).csv
+│   └── Weather dataset
 │
 ├── models/
-│   ├── xgboost_weather_model.pkl
-│   ├── weather_features.pkl
-│   ├── improved_xgboost_weather_model.pkl
-│   └── improved_weather_features.pkl
+│   └── Saved forecasting models
 │
-├── outputs/
-├── reports/
-│
-├── requirements.txt
 ├── README.md
-└── .gitignore
+│
+└── requirements.txt
 ```
 
-## Installation and Usage
+## Installation and Setup
 
-1. Clone the repository:
+### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_LINK
+git clone https://github.com/YOUR-USERNAME/Weather-Trend-Forecasting.git
 ```
 
-2. Navigate to the project directory:
+### 2. Navigate to the project directory
 
 ```bash
 cd Weather-Trend-Forecasting
 ```
 
-3. Install the required libraries:
+### 3. Create a virtual environment (optional)
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+**Windows**
+```bash
+venv\Scripts\activate
+```
+
+**macOS / Linux**
+```bash
+source venv/bin/activate
+```
+
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Launch Jupyter Notebook:
+### 5. Run the notebook
 
 ```bash
-jupyter notebook notebooks/notebook.ipynb
+jupyter notebook implementation.ipynb
 ```
 
-5. Run the notebook cells in sequence to reproduce the analysis and model development.
+You can also open the notebook directly in Visual Studio Code with the Jupyter extension installed.
 
-**Note:** Ensure the dataset is placed inside the `data/` directory before running the notebook.
+## Requirements
 
+Create a `requirements.txt` file containing the libraries used by the notebook:
 
+```text
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+statsmodels
+jupyter
+joblib
+```
+
+## Limitations
+
+- The dataset covers a relatively limited historical period for long-term climate analysis.
+- Weather observations may contain noise and location-specific variations.
+- Forecasting accuracy depends on data quality, feature selection, and the prediction horizon.
+- A positive but relatively low R² score suggests that further model improvements are needed.
+- Short-term weather forecasting results should not be interpreted as long-term climate predictions.
 
 ## Future Improvements
 
-- Include additional weather variables such as humidity, rainfall, and wind speed.
-- Apply advanced time-series forecasting techniques.
-- Improve geographical data standardization.
-- Deploy the model through a web application.
+- Incorporate longer historical weather records.
+- Include additional atmospheric and environmental variables.
+- Explore advanced time-series and deep learning models such as LSTM.
+- Improve feature engineering and hyperparameter tuning.
+- Evaluate performance across multiple locations.
+- Develop an interactive weather forecasting dashboard.
 
-## Conclusion
+## Author
 
-This project demonstrates an end-to-end machine learning workflow for global temperature analysis, from data preprocessing and exploratory analysis to model development, evaluation, and improvement. The improved XGBoost model achieved an R² score of 0.8038 on the test set.
+**Your Name**
+
+GitHub: [YOUR-GITHUB-PROFILE](https://github.com/YOUR-USERNAME)
+
+## License
+
+This project is intended for educational and research purposes. Add a license such as MIT if you want others to reuse and modify the project under its terms.
