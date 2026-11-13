@@ -325,9 +325,7 @@ joblib
 ## Author
 
 <<<<<<< HEAD
-**Your Name**
-
-GitHub: [YOUR-GITHUB-PROFILE](https://github.com/YOUR-USERNAME)
+**Rohit Kumar**
 
 ## License
 
