@@ -26,7 +26,6 @@ It covers an end-to-end machine learning workflow, including data cleaning, expl
 
 **Dataset:** `GlobalWeatherRepository.csv`
 
-<<<<<<< HEAD
 The dataset contains global weather observations with 128,638 records and 41 columns.
 
 It includes weather-related information such as:
@@ -111,7 +110,6 @@ The project explores multiple forecasting approaches:
 
 Developed and compared the following regression models:
 
->>>>>>> 3c2a5752b4d65a2a6772d146590bedb29b667277
 - Linear Regression
 - Random Forest
 - XGBoost
@@ -313,7 +311,6 @@ joblib
 
 ## Author
 
-<<<<<<< HEAD
 **Rohit Kumar**
 
 ## License
