@@ -184,7 +184,6 @@ The trained models and their corresponding feature lists are saved in the `model
 - `improved_weather_features.pkl` – Feature list used by the improved model.
 
 The models are saved using Joblib for future loading and prediction without retraining.
->>>>>>> 3c2a5752b4d65a2a6772d146590bedb29b667277
 
 ## Project Structure
 
