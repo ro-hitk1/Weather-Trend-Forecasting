@@ -195,8 +195,6 @@ Weather-Trend-Forecasting/
 =======
 ├── notebooks/
 │   └── implementation_final.ipynb
->>>>>>> 3c2a5752b4d65a2a6772d146590bedb29b667277
-│
 ├── models/
 │   └── Saved forecasting models
 │
