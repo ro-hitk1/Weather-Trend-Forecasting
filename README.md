@@ -126,7 +126,7 @@ The following metrics are used:
 - **MAE (Mean Absolute Error):** Measures average absolute prediction error.
 - **RMSE (Root Mean Squared Error):** Penalizes larger prediction errors.
 - **R² Score:** Measures the proportion of variance explained by the model.
-=======
+
 Also evaluated a weighted ensemble combining XGBoost and Random Forest.
 
 ### 5. Additional Analyses
@@ -237,31 +237,26 @@ source venv/bin/activate
 ```
 
 ### 4. Install dependencies
-=======
+
 ### 3. Install the required dependencies
->>>>>>> 3c2a5752b4d65a2a6772d146590bedb29b667277
 
 ```bash
 pip install -r requirements.txt
 ```
 
-<<<<<<< HEAD
 ### 5. Run the notebook
-=======
 ### 4. Launch Jupyter Notebook
->>>>>>> 3c2a5752b4d65a2a6772d146590bedb29b667277
 
 ```bash
-jupyter notebook implementation.ipynb
+jupyter notebook implementation_final.ipynb
 ```
 
 <<<<<<< HEAD
 You can also open the notebook directly in Visual Studio Code with the Jupyter extension installed.
-=======
+
 ### 5. Run the notebook
 
 Execute the notebook cells in sequence to reproduce the data preprocessing, analysis, model training, evaluation, and model improvement workflow.
->>>>>>> 3c2a5752b4d65a2a6772d146590bedb29b667277
 
 ## Requirements
 
@@ -296,7 +291,6 @@ joblib
 - Improve feature engineering and hyperparameter tuning.
 - Evaluate performance across multiple locations.
 - Develop an interactive weather forecasting dashboard.
-=======
 ## Future Improvements
 
 - Include additional weather variables such as humidity, rainfall, and wind speed.
@@ -304,7 +298,6 @@ joblib
 - Improve geographical data standardization.
 - Deploy the trained model through a web application.
 - Evaluate model performance on newer and independent weather observations.
->>>>>>> 3c2a5752b4d65a2a6772d146590bedb29b667277
 
 ## Author
 
@@ -313,7 +306,6 @@ joblib
 ## License
 
 This project is intended for educational and research purposes. Add a license such as MIT if you want others to reuse and modify the project under its terms.
-=======
 This project demonstrates an end-to-end machine learning workflow for global temperature analysis, covering data preprocessing, exploratory analysis, anomaly detection, geographical comparisons, model development, and performance improvement.
 
 Among the evaluated models, the improved XGBoost model achieved an **MAE of 2.4062°C, RMSE of 3.2484°C, and R² score of 0.8038** on the chronological test set, compared with an original XGBoost R² score of 0.7505.
